@@ -1,9 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const InvoicesTable = () => {
-  const mockData = [
-    { id: 1, serial: '001', name: 'John Doe', product: 'Laptop', qty: 1, tax: 10, total: 1000, date: '2024-11-20' },
-  ];
+  const invoices = useSelector((state) => state.invoices);
 
   return (
     <table className="min-w-full bg-white">
@@ -19,15 +18,15 @@ const InvoicesTable = () => {
         </tr>
       </thead>
       <tbody>
-        {mockData.map((row) => (
-          <tr key={row.id}>
-            <td className="border px-4 py-2">{row.serial}</td>
-            <td className="border px-4 py-2">{row.name}</td>
-            <td className="border px-4 py-2">{row.product}</td>
-            <td className="border px-4 py-2">{row.qty}</td>
-            <td className="border px-4 py-2">{row.tax}</td>
-            <td className="border px-4 py-2">{row.total}</td>
-            <td className="border px-4 py-2">{row.date}</td>
+        {invoices.map((invoice) => (
+          <tr key={invoice.serial}>
+            <td className="border px-4 py-2">{invoice.serial}</td>
+            <td className="border px-4 py-2">{invoice.customerName}</td>
+            <td className="border px-4 py-2">{invoice.productName}</td>
+            <td className="border px-4 py-2">{invoice.qty}</td>
+            <td className="border px-4 py-2">{invoice.tax}</td>
+            <td className="border px-4 py-2">{invoice.total}</td>
+            <td className="border px-4 py-2">{invoice.date}</td>
           </tr>
         ))}
       </tbody>

@@ -15,16 +15,17 @@ const useFileProcessing = () => {
     setError(null);
 
     try {
-      const result = await processFiles(files);
+      const { invoices, products, customers } = await processFiles(files);
 
-      // Distribute extracted data into slices
-      result.invoices.forEach((invoice) => dispatch(addInvoice(invoice)));
-      result.products.forEach((product) => dispatch(addProduct(product)));
-      result.customers.forEach((customer) => dispatch(addCustomer(customer)));
+      // Dispatch structured data to Redux slices
+      invoices.forEach((invoice) => dispatch(addInvoice(invoice)));
+      products.forEach((product) => dispatch(addProduct(product)));
+      customers.forEach((customer) => dispatch(addCustomer(customer)));
 
       setIsLoading(false);
     } catch (err) {
-      setError('Error processing files. Please try again.');
+      setError('Failed to process files. Please check the file format.');
+      console.error(err);
       setIsLoading(false);
     }
   };

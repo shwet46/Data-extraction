@@ -8,9 +8,9 @@ const productsSlice = createSlice({
       state.push(action.payload);
     },
     updateProduct: (state, action) => {
-      const index = state.findIndex((prod) => prod.id === action.payload.id);
+      const index = state.findIndex((prod) => prod.name === action.payload.name);
       if (index !== -1) {
-        state[index] = action.payload;
+        state[index] = { ...state[index], ...action.payload };
       }
     },
   },

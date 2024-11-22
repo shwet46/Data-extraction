@@ -8,9 +8,9 @@ const invoicesSlice = createSlice({
       state.push(action.payload);
     },
     updateInvoice: (state, action) => {
-      const index = state.findIndex((inv) => inv.id === action.payload.id);
+      const index = state.findIndex((inv) => inv.serial === action.payload.serial);
       if (index !== -1) {
-        state[index] = action.payload;
+        state[index] = { ...state[index], ...action.payload };
       }
     },
   },
