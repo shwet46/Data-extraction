@@ -22,19 +22,10 @@ export default function Navbar({ onGetStarted }) {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <nav>
-              <ul className="flex space-x-8">
-                <li><a href="#templates" className="text-gray-700 hover:text-indigo-600">Templates</a></li>
-                <li><a href="#pricing" className="text-gray-700 hover:text-indigo-600">Pricing</a></li>
-                <li><a href="#faqs" className="text-gray-700 hover:text-indigo-600">FAQs</a></li>
-                <li><a href="#contact" className="text-gray-700 hover:text-indigo-600">Contact us</a></li>
+              <ul className="nline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-[100px] text-white bg-indigo-600 hover:bg-indigo-700">
+                <li><a href="#contact" className="text-gray-700 text-white">Contact us</a></li>
               </ul>
             </nav>
-            <button
-              onClick={onGetStarted}
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-            >
-              Get Started
-            </button>
           </div>
 
           {/* Mobile menu button */}

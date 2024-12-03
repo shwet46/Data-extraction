@@ -18,11 +18,6 @@ function LandingPage({ onGetStarted }) {
   return (
     <div className="bg-white">
       <Hero onTryClick={onGetStarted} />
-      <Features />
-      <Demo />
-      <TechStack />
-      <Pricing/>
-      <FAQs />
       <Footer />
     </div>
   );
