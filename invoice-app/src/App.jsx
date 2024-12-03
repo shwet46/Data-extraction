@@ -1,29 +1,63 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import Invoices from './pages/Invoices';
-import Products from './pages/Products';
-import Customers from './pages/Customers';
+import { BrowserRouter as Router, Routes, Route, useNavigate, createRoutesFromElements } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+import { ToastProvider } from './contexts/ToastContext';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Demo from './components/Demo';
+import TechStack from './components/TechStack';
+import Pricing from './components/Pricing';
+import FAQs from './components/FAQs';
+import Footer from './components/Footer';
+import Dashboard from './components/dashboard/Dashboard';
 
-const App = () => {
+// Landing page component
+function LandingPage({ onGetStarted }) {
   return (
-    <Router>
-      <div className="p-4">
-        <nav className="mb-4">
-          <a href="/" className="mr-4 text-blue-500">Home</a>
-          <a href="/invoices" className="mr-4 text-blue-500">Invoices</a>
-          <a href="/products" className="mr-4 text-blue-500">Products</a>
-          <a href="/customers" className="text-blue-500">Customers</a>
-        </nav>
-        <Routes>
-          <Route path="/" element={<HomePage />} /> {/* Default page */}
-          <Route path="/invoices" element={<Invoices />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/customers" element={<Customers />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="bg-white">
+      <Hero onTryClick={onGetStarted} />
+      <Features />
+      <Demo />
+      <TechStack />
+      <Pricing/>
+      <FAQs />
+      <Footer />
+    </div>
   );
-};
+}
 
-export default App;
+// Main App component
+function App() {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/dashboard');
+  };
+
+  return (
+    <div className="bg-gray-50">
+      <Navbar onGetStarted={handleGetStarted} />
+      <Routes future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <Route path="/" element={<LandingPage onGetStarted={handleGetStarted} />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </div>
+  );
+}
+
+// Wrapper component to provide routing
+function AppWrapper() {
+  return (
+    <Provider store={store}>
+      <ToastProvider>
+        <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+          <App />
+        </Router>
+      </ToastProvider>
+    </Provider>
+  );
+}
+
+export default AppWrapper;
