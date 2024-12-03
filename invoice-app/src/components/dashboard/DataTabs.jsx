@@ -126,7 +126,7 @@ export default function DataTabs({ data }) {
   const DownloadButton = ({ data, filename }) => (
     <button
       onClick={() => downloadExcel(data, filename)}
-      className="flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200"
+      className="flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-600 rounded-[100px] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200"
     >
       <ArrowDownTrayIcon className="w-4 h-4 mr-2" />
       Download Excel

@@ -7,9 +7,9 @@ export default function Hero({ onTryClick }) {
             <div className="sm:text-center lg:text-center">
               <h1 className="text-4xl tracking-tight text-bold text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block">Extract Data in one go</span>
-                <span className="block text-purple-600">Your AI assistant</span>
+                <span className="block font-extrabold my-2 text-indigo-900">Your AI assistant</span>
               </h1>
-              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+              <p className="mt-3 text-base text-blue-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                 We extract your data from pdf, excel sheet to photos and generate the extracted data for you in tabular format
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">

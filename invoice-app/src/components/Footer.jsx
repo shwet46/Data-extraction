@@ -1,58 +1,27 @@
-import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <img src="/brand_logo.svg" alt="Swipe Logo" className="h-8 w-auto mb-4" />
-            <p className="text-gray-300">
-              Automated invoice management system powered by AI technology.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Contact</h3>
-            <p className="text-gray-300">
-              Email: contact@swipe.com<br />
-              Phone: (555) 123-4567<br />
-              Address: 123 Tech Street, San Francisco, CA
-            </p>
-          </div>
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
-              <a 
-                href="https://x.com/sunny_bibyan" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                <FaTwitter className="h-6 w-6" />
-              </a>
-              <a 
-                href="https://github.com/SunnyBibyan" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                <FaGithub className="h-6 w-6" />
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/sunny-bibyan/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                <FaLinkedin className="h-6 w-6" />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 border-t border-gray-700 pt-8">
-          <p className="text-center text-gray-300">
-            &copy; 2024 Swipe. All rights reserved.
+    <footer className="bg-white">
+      <div className="w-full border-t-2 border-slate-400 flex flex-col items-center p-4">
+        {/* About Us Section */}
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-center mb-2 mt-4">
+          About us
+        </h1>
+        <div className="max-w-[90%] sm:max-w-[500px] lg:max-w-[700px] flex text-center my-4 text-slate-800">
+          <p className="text-sm sm:text-base lg:text-lg">
+            Swipe leverages cutting-edge technology to deliver smart, efficient, and user-friendly solutions for individuals and businesses. 
+            The company is recognized for its focus on data extraction, processing automation, and payment solutions.
           </p>
+        </div>
+        {/* Social Media Section */}
+        <div className="my-6 flex flex-col items-center">
+          <h2 className="text-2xl sm:text-3xl font-bold">Connect with us</h2>
+          <div className="flex flex-row justify-center mt-4 space-x-4">
+            <FaTwitter className="h-5 w-5 sm:h-6 sm:w-6" />
+            <FaLinkedin className="h-5 w-5 sm:h-6 sm:w-6" />
+            <FaInstagram className="h-5 w-5 sm:h-6 sm:w-6" />
+          </div>
         </div>
       </div>
     </footer>

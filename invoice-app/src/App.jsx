@@ -5,11 +5,6 @@ import { store } from './store/store';
 import { ToastProvider } from './contexts/ToastContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Features from './components/Features';
-import Demo from './components/Demo';
-import TechStack from './components/TechStack';
-import Pricing from './components/Pricing';
-import FAQs from './components/FAQs';
 import Footer from './components/Footer';
 import Dashboard from './components/dashboard/Dashboard';
 
